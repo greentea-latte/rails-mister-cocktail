@@ -1,0 +1,12 @@
+    <div class="border-bottom bg-white">
+      <div class="container d-flex justify-content-end py-2">
+        <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "Home", cocktails_path %></button>
+      </div>
+    </div>
+<h2>Create a dose</h2>
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :description %>
+    <%= f.submit "add an ingredient", class: "btn btn-primary"%>
+<% end %>

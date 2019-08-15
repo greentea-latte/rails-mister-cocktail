@@ -1,0 +1,15 @@
+<div class="container padded py-4">
+  <h1 class="text-center">Add new cocktail</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name %>
+          <%= f.input :image_url%>
+          <%= f.submit "Submit", class: "btn btn-outline-info m-4 py-1 px-4 rounded-pill" %>
+        <% end %>
+        <div class="pad20 ml-4">
+          <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
+        </div>
+    </div>
+  </div>
+</div>

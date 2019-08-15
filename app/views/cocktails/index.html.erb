@@ -1,0 +1,18 @@
+<header class="d-flex flex-column align-items-center justify-content-center">
+<h1>Mahalo Cocktails</h1>
+<button type="button" class="btn btn-outline-info m-4 py-1 px-4 rounded-pill"><%= link_to "Design your own cocktail", new_cocktail_path %></button>
+</header>
+
+  <div class="card-container d-flex">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card mt-5 mr-4 ml-4" style="width: 20rem;">
+      <img src=<%= cocktail.image_url %> alt="cocktail image" class="card-image">
+  <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "recipe", cocktail_path(cocktail) %></button>
+  </div>
+  </div>
+   <% end %>
+    </div>
+
