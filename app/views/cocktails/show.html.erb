@@ -7,41 +7,39 @@
     <!-- /navbar -->
 
     <!-- /cocktail recipe -->
-  <div class="container-show">
-    <div class="row">
-      <img src=<%= @cocktail.image_url %> alt="cocktail image" class="card-image-large">
-    </div>
-  </div>
+<div class="header-show d-flex flex-column align-items-center justify-content-center">
+<h1><%= @cocktail.name %></h1>
+</div>
 
   <div class="bg-white">
     <div class="container">
-      <div class="row">
-        <div class="col-4">
-        <h2 class='m-3'><%= @cocktail.name %></h2>
+      <div class="row d-flex justify-content-center py-4">
+
+        <div class="col-3 m-2">
+        <img src=<%= @cocktail.image_url %> alt="cocktail image" class="card-image">
+        </div>
+
+        <div class="col-3 m-2">
         <p class = 'my-3 ml-4'><strong>Ingredients</strong></p>
         <% @cocktail.doses.each do |dose| %>
         <ul>
          <li> <%= dose.description %> <%= dose.ingredient.name%> <%= link_to "Remove", cocktail_dose_path(dose), class: "btn btn-outline-danger btn-sm", method: :delete  %></li>
         </ul>
         <% end %>
+        <div class="btn-center d-flex justify-content-center">
+         <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4 my-2"><%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %></button>
+         </div>
         </div>
-        <div class="col-7">
+
+        <div class="col-5 m-2">
           <h2 class='my-3'>description</h2>
           <p>
-            Muddle the lime juice, sugar and mint leaves in a small jug, crushing the mint as you go – you can use the end of a rolling pin for this. Pour into a tall glass and add a handful of ice.
-            <br>
-            <br>
-            Pour over the rum, stirring with a long-handled spoon. Top up with soda water, garnish with mint and serve.
+            <%= @cocktail.recipe %>
           </p>
-        </div>
+          </div>
+
       </div>
     </div>
   </div>
 
-    <div class="bg-white">
-    <div class="container">
-      <div class="row">
-     <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4 mx-2"><%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %></button>
-    </div>
-    </div>
-  </div>
+

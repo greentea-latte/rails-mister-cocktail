@@ -9,8 +9,8 @@
       <img src=<%= cocktail.image_url %> alt="cocktail image" class="card-image">
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "recipe", cocktail_path(cocktail) %></button>
+    <p class="card-text"><%=truncate(cocktail.recipe, :length => 80) %></p>
+    <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "see more", cocktail_path(cocktail) %></button>
   </div>
   </div>
    <% end %>
