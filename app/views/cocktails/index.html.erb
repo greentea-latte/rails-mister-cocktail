@@ -1,16 +1,27 @@
 <header class="d-flex flex-column align-items-center justify-content-center">
 <h1>Mahalo Cocktails</h1>
-<button type="button" class="btn btn-outline-info m-4 py-1 px-4 rounded-pill"><%= link_to "Design your own cocktail", new_cocktail_path %></button>
+<button type="button" class="btn btn-warning my-4 py-1 px-4 rounded-pill"><%= link_to "Design your own cocktail", new_cocktail_path %></button>
 </header>
 
   <div class="card-container d-flex">
+
     <% @cocktails.each do |cocktail| %>
     <div class="card mt-5 mr-4 ml-4" style="width: 20rem;">
-      <img src=<%= cocktail.image_url %> alt="cocktail image" class="card-image">
+      <div class="image-container">
+      <img src='<%= cocktail.image_url %>' alt="cocktail-image" class="card-image">
+      <div class="icon">
+      <%= link_to cocktail_path(cocktail), method: :delete do %>
+            <i class="fas fa-times">    </i>
+      <% end %>
+      </div>
+
+      </div>
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
     <p class="card-text"><%=truncate(cocktail.recipe, :length => 80) %></p>
-    <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "see more", cocktail_path(cocktail) %></button>
+    <div class="btn-container">
+    <button type="button" class="btn btn-outline-warning my-2 py-1 px-4 rounded-pill"><%= link_to "see more", cocktail_path(cocktail) %></button>
+    </div>
   </div>
   </div>
    <% end %>
