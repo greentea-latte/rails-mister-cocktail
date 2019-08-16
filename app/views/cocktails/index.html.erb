@@ -7,10 +7,10 @@
 <button type="button" class="btn btn-warning my-4 py-1 px-4 rounded-pill"><%= link_to "Design your own cocktail", new_cocktail_path %></button>
 </header>
 
-  <div class="card-container d-flex">
+  <div class="card-container d-flex flex-wrap justify-content-around">
 
     <% @cocktails.each do |cocktail| %>
-    <div class="card mt-5 mr-4 ml-4" style="width: 20rem;">
+    <div class="card mt-5 col-12 col-lg-3" style="width: 20rem;">
       <div class="image-container">
               <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
       <div class="icon">
