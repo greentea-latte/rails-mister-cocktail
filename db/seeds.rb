@@ -1,6 +1,5 @@
 Dose.destroy_all
 Ingredient.destroy_all
-Cocktail.destroy_all
 
 Ingredient.create(name: 'lime')
 Ingredient.create(name: 'ice')
@@ -16,7 +15,8 @@ Ingredient.create(name: 'cinamon')
 Ingredient.create(name: 'red wine')
 Ingredient.create(name: 'brandy')
 
-Cocktail.create(name: 'mojito')
-Cocktail.create(name: 'sangria')
+Cocktail.create(name: 'Mojito')
+Cocktail.create(name: 'Whisky Sour')
+Cocktail.create(name: 'Sex on the beach')
 
 # Dose.create!(description: 'one', cocktail_id: 5, ingredient_id: 6)
