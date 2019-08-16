@@ -6,9 +6,10 @@
         <%= simple_form_for(@cocktail) do |f| %>
           <%= f.label :name %>
           <%= f.text_field :name %>
-          <br>
-          <%= f.label :image_url %>
-          <%= f.text_field :image_url%>
+          <%= f.input :photo%>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.label :recipe %>
+          <%= f.text_area :recipe %>
           <%= f.submit "Submit", class: "btn btn-outline-info m-4 py-1 px-4 rounded-pill" %>
         <% end %>
         <div class="pad20 ml-4">

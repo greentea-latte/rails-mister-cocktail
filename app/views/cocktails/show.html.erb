@@ -20,7 +20,7 @@
       <div class="row d-flex justify-content-center py-4">
 
         <div class="col-3 m-2">
-        <img src='<%= @cocktail.image_url %>' alt="cocktail image" class="card-image">
+        <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
         </div>
 
         <div class="col-3 m-2">
