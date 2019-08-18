@@ -1,29 +1,25 @@
     <!-- navbar -->
     <div class="border-bottom bg-white">
       <div class="container d-flex justify-content-end py-2">
-        <button type="button" class="btn btn-outline-info rounded-pill py-1 px-4"><%= link_to "Home", cocktails_path %></button>
+        <button type="button" class="btn btn-warning rounded-pill py-1 px-4"><%= link_to "Home", cocktails_path %></button>
       </div>
     </div>
     <!-- /navbar -->
 
-    <!-- /cocktail recipe -->
+
 <div class="header-show d-flex flex-column align-items-center justify-content-center">
 <h1><%= @cocktail.name %></h1>
 </div>
 
-  <div class="bg-white">
-    <div class="edit-btn">
-    <%= link_to "Edit", edit_cocktail_path, class: "btn btn-warning py-1 px-4 rounded-pill" %>
+    <!-- /cocktail recipe -->
 
-    </div>
     <div class="container">
       <div class="row d-flex justify-content-center py-4">
 
-        <div class="col-3 m-2">
+        <div class="col-xl-3 col-lg-3 col-md-3 m-2 col-sm-12 col-12">
         <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
         </div>
-
-        <div class="col-3 m-2">
+        <div class="col-xl-3 col-lg-3 col-md-3 m-2 col-sm-12 col-12">
         <p class = 'my-3 ml-4'><strong>Ingredients</strong></p>
         <% @cocktail.doses.each do |dose| %>
         <ul>
@@ -35,15 +31,22 @@
          </div>
         </div>
 
-        <div class="col-5 m-2">
-          <h2 class='my-3'>description</h2>
+        <div class="col-xl-5 col-lg-5 col-md-5 m-2 col-sm-12 col-12">
+          <p class='my-3'><strong>description</strong></p>
           <p>
             <%= @cocktail.recipe %>
           </p>
           </div>
-      </div>
-    </div>
   </div>
+</div>
+    <div class="show-btn-container d-flex justify-content-center">
+    <div class="edit-btn-show mx-5 my-4">
+    <%= link_to "Edit cocktail", edit_cocktail_path, class: "btn btn-info rounded-pill" %>
+    </div>
+
+    </div>
+
+    </div>
 
 
 
